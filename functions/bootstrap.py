@@ -15,7 +15,7 @@ def mbb(serie,window_size):
     It is ideal if you want to perform Bootstrap on time series
     
     """
-    bx = np.zeros(mt.floor((len(serie)/window_size)+2)*window_size,dtype=int)
+    bx = np.zeros(mt.floor((len(serie)/window_size)+2)*window_size)
     for i in range(mt.floor(len(serie)/window_size)+2):
         c=int(np.random.choice(len(serie)-window_size+1,1))
         bx[i*window_size:((i+1)*window_size)]=serie[c:(c+window_size)]
